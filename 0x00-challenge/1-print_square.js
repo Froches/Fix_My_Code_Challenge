@@ -6,17 +6,16 @@
     of the program.
 */
 
-if (process.argv.length <= 2) {
-    process.stderr.write("Missing argument\n");
-    process.stderr.write("Usage: ./1-print_square.js <size>\n");
-    process.stderr.write("Example: ./1-print_square.js 8\n");
+if (process.argv.length !== 3) {
+    console.error("Usage: ./1-print_square.js <size>");
+    console.error("Example: ./1-print_square.js 8");
     process.exit(1);
 }
 
 const size = parseInt(process.argv[2]);
 
 if (isNaN(size) || size <= 0) {
-    process.stderr.write("Invalid size. Please provide a positive integer.\n");
+    console.error("Invalid size. Please provide a positive integer.");
     process.exit(1);
 }
 
